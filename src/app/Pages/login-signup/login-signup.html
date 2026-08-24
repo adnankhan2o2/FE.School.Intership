@@ -1,0 +1,54 @@
+<div class="heading">
+  <h1>Login / Signup Page</h1>
+</div>
+
+<div class="loginsignup-container">
+
+  <form *ngIf="activeform === 'signup'" (ngSubmit)="signup()">
+
+    <h2>Signup</h2>
+
+    <div *ngIf="signupMessage" class="message" [ngClass]="signupMessageType">
+      {{ signupMessage }}
+    </div>
+
+    <div class="form-group"><input type="text" name="username" [(ngModel)]="username" placeholder="Username" required></div>
+
+    <div class="form-group"><input type="text" name="number" [(ngModel)]="number" placeholder="PhoneNo" required></div>
+
+    <div class="form-group"><input type="password" name="password" [(ngModel)]="password" placeholder="Password" required></div>
+
+    <div class="form-group"><input type="text" name="city" [(ngModel)]="city" placeholder="City" required></div>
+
+    <button type="submit">Signup</button>
+
+    <p (click)="toggleform('login')">
+      Already Have an Account
+      <span class="highlighted">Login</span>
+    </p>
+
+  </form>
+
+
+  <form *ngIf="activeform === 'login'" (ngSubmit)="login()">
+
+    <h2>Login</h2>
+
+    <div *ngIf="loginMessage" class="message" [ngClass]="loginMessageType">
+      {{ loginMessage }}
+    </div>
+
+    <div class="form-group"><input type="text" name="loginUsername" [(ngModel)]="username" placeholder="Username" required></div>
+
+    <div class="form-group"><input type="password" name="loginPassword" [(ngModel)]="password" placeholder="Password" required></div>
+
+    <button type="submit">Login</button>
+
+    <p (click)="toggleform('signup')">
+      Don't Have an Account?
+      <span class="highlighted">Signup</span>
+    </p>
+
+  </form>
+
+</div>

@@ -1,0 +1,72 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+
+    <!-- Website name -->
+    <div class="navbar-header">
+      <a class="navbar-brand">WebSiteName</a>
+    </div>
+
+    <!-- Left side of navbar -->
+    <ul class="nav navbar-nav">
+
+      <!-- Home button -->
+      <li class="active">
+        <a routerLink="/dashboard">Home</a>
+      </li>
+
+    </ul>
+
+    <!-- Right side of navbar -->
+    <ul class="nav navbar-nav navbar-right">
+
+      <!-- User dropdown -->
+      <li class="dropdown">
+
+        <!-- User button -->
+        <a href="#"
+           class="dropdown-toggle"
+           data-toggle="dropdown"
+           (click)="$event.preventDefault()">
+
+          <span class="glyphicon glyphicon-user"></span>
+          User
+          <span class="caret"></span>
+
+        </a>
+
+        <!-- User dropdown menu -->
+        <ul class="dropdown-menu">
+
+          <!-- User Details button -->
+          <li>
+            <a routerLink="/user_details"
+               (click)="$event.stopPropagation()">
+
+              <span class="glyphicon glyphicon-user"></span>
+              User Details
+
+            </a>
+          </li>
+
+          <!-- Logout button -->
+          <li>
+            <a href="#"
+               (click)="onLogout(); $event.preventDefault()">
+
+              <span class="glyphicon glyphicon-log-out"></span>
+              Logout
+
+            </a>
+          </li>
+
+        </ul>
+
+      </li>
+
+    </ul>
+
+  </div>
+</nav>
+
+<!-- Child pages appear here -->
+<router-outlet></router-outlet>

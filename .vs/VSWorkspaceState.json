@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\Pages",
+    "\\src\\app\\Pages\\dashboard",
+    "\\src\\app\\Pages\\layout",
+    "\\src\\app\\Pages\\login-signup",
+    "\\src\\app\\services"
+  ],
+  "SelectedNode": "\\src\\app\\Pages\\login-signup\\login-signup.html",
+  "PreviewInSolutionExplorer": false
+}

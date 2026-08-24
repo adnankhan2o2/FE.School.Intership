@@ -1,0 +1,69 @@
+<div class="user-details-container">
+  <h1>User Details</h1>
+
+  <div class="details-box">
+    <h2>Current Information</h2>
+    <table class="user-details-table">
+      <tr>
+        <th>Name</th>
+        <td>{{ username }}</td>
+      </tr>
+      <tr>
+        <th>City</th>
+        <td>{{ city }}</td>
+      </tr>
+      <tr>
+        <th>Mobile Number</th>
+        <td>{{ number }}</td>
+      </tr>
+    </table>
+  </div>
+
+  <button type="button"
+          class="change-password-button"
+          (click)="showChangePassword()">
+    Change Password
+  </button>
+
+  <div class="password-box" *ngIf="showPasswordForm">
+    <h2>Change Password</h2>
+
+    <div class="form-group">
+      <label for="currentPassword">Current Password</label>
+      <input id="currentPassword"
+             type="password"
+             [(ngModel)]="currentPassword"
+             placeholder="Enter current password">
+    </div>
+
+    <div class="form-group">
+      <label for="newPassword">New Password</label>
+      <input id="newPassword"
+             type="password"
+             [(ngModel)]="newPassword"
+             placeholder="Enter new password">
+    </div>
+
+    <div class="form-group">
+      <label for="confirmPassword">Confirm New Password</label>
+      <input id="confirmPassword"
+             type="password"
+             [(ngModel)]="confirmPassword"
+             placeholder="Confirm new password">
+    </div>
+
+    <button type="button"
+            class="update-password-button"
+            (click)="changePassword()">
+      Update Password
+    </button>
+  </div>
+
+  <div *ngIf="message"
+       class="message"
+       [class.success]="messageType === 'success'"
+       [class.error]="messageType === 'error'">
+    {{ message }}
+  </div>
+
+</div>
